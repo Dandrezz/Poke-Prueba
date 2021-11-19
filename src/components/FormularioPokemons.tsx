@@ -129,7 +129,7 @@ const FormularioPokemons = () => {
             <div
                 style={{ textAlign: 'center' }}
                 className="mb-3 pt-3"
-            >{ (pokemonNuevo || pokemonSelecionado === null) ? 'Nuevo Pókemon' : pokemonSelecionado.name }</div>
+            >{ (pokemonNuevo || pokemonSelecionado === null) ? 'Nuevo Pokémon' : pokemonSelecionado.name }</div>
 
             <div className="mb-3 row justify-content-evenly">
                 <div className="row col-4">

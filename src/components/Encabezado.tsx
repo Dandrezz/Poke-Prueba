@@ -12,7 +12,7 @@ const Encabezado = () => {
 
     return (
         <>
-            <div className="mb-2 mt-3 fw-bold">Lista de Pokemon</div>
+            <div className="mb-2 mt-3 fw-bold">Lista de Pokémon</div>
             <div className="mb-2 row justify-content-between">
                 <div className="col-3" >
                     <input 
