@@ -9,9 +9,16 @@ import { newPokemon, requestsPokemons, selectPokemon } from '../actions/pokemonA
 
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
-import { PokemonAPI } from './TablePokemons'
 import pokemonApi from '../api/pokemonApi'
 import Swal from 'sweetalert2'
+
+interface formPokemosValuesTypes{
+    nombre: '',
+    imagen: '',
+    ataque: 0,
+    defensa: 0,
+    tipo: ''
+}
 
 const FormularioPokemons = () => {
 
@@ -27,7 +34,7 @@ const FormularioPokemons = () => {
         tipo: ''
     })
 
-    const { nombre, imagen, ataque, defensa, tipo} = formPokemosValues
+    const { nombre, imagen, ataque, defensa, tipo } = formPokemosValues
 
     useEffect(() => {
         if( pokemonSelecionado !== null ){
@@ -49,7 +56,7 @@ const FormularioPokemons = () => {
         }
     }, [pokemonSelecionado])
 
-    const handleChengeType = ( value ) => {
+    const handleChangeType = ( value:string ) => {
         setValues({
             ...formPokemosValues,
             tipo: value
@@ -177,11 +184,11 @@ const FormularioPokemons = () => {
             <div className="mb-3 row justify-content-center">
                 <div className="col-4 row" style={{ textAlign:'center' }}>
                     <DropdownButton className="col" id="dropdown-basic-button" title="Tipo">
-                        <Dropdown.Item onClick={()=>{handleChengeType("water")}} >water</Dropdown.Item>
-                        <Dropdown.Item onClick={()=>{handleChengeType("fire")}} >fire</Dropdown.Item>
-                        <Dropdown.Item onClick={()=>{handleChengeType("normal")}} >normal</Dropdown.Item>
-                        <Dropdown.Item onClick={()=>{handleChengeType("bug")}} >bug</Dropdown.Item>
-                        <Dropdown.Item onClick={()=>{handleChengeType("poison")}} >poison</Dropdown.Item>
+                        <Dropdown.Item onClick={()=>{handleChangeType("water")}} >water</Dropdown.Item>
+                        <Dropdown.Item onClick={()=>{handleChangeType("fire")}} >fire</Dropdown.Item>
+                        <Dropdown.Item onClick={()=>{handleChangeType("normal")}} >normal</Dropdown.Item>
+                        <Dropdown.Item onClick={()=>{handleChangeType("bug")}} >bug</Dropdown.Item>
+                        <Dropdown.Item onClick={()=>{handleChangeType("poison")}} >poison</Dropdown.Item>
                     </DropdownButton>
                     <input 
                         className="col form-control"

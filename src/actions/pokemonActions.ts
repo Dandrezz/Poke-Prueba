@@ -1,3 +1,4 @@
+import { Dispatch } from "redux";
 import pokemonApi from "../api/pokemonApi";
 import { types } from "../types/types";
 
@@ -16,7 +17,7 @@ export const searchPokemon = ( pattern:string ) => ({
 })
 
 export const requestsPokemons = () => {
-    return async(dispatch) => {
+    return async(dispatch:Dispatch<any>) => {
         try {
             const { data } = await pokemonApi.get(`/?idAuthor=1`)
             dispatch( loadPokemons( data ) )

@@ -40,7 +40,7 @@ const TablePokemons = () => {
     useEffect(() => {
 
         if(pokemonsObtenidos!==null)
-            setListaPokemonsFiltrados(pokemonsObtenidos.filter(pokemon => pokemon.name.toUpperCase().includes(filtro.toUpperCase())))
+            setListaPokemonsFiltrados(pokemonsObtenidos.filter((pokemon:PokemonAPI) => pokemon.name.toUpperCase().includes(filtro.toUpperCase())))
 
     }, [filtro])
 
